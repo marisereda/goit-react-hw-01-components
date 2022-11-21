@@ -1,8 +1,9 @@
 .app {
   padding: 2em;
   display: flex;
-  background-color: var(--bg-color-dark);
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2em;
+  background-color: var(--bg-color-dark);
 }
