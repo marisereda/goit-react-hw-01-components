@@ -4,6 +4,7 @@
   --bg-color-primary: white;
   --bg-color-light: #f3f6f9;
   --bg-color-dark: #e7ecf2;
+  --bg-color-table-head: #00bcd5;
 
   --shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -45,4 +46,16 @@ h6 {
 ul {
   margin: 0;
   padding: 0;
+}
+
+td,
+th,
+tr {
+  /* display: ; */
+  vertical-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

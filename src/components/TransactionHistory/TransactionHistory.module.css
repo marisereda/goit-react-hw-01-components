@@ -1,0 +1,21 @@
+.transactions {
+  text-align: center;
+  color: var(--text-color-accent);
+  box-shadow: var(--shadow);
+}
+
+th,
+td {
+  padding: 0.875em 5em;
+  font-weight: normal;
+}
+
+.transactions__head {
+  text-transform: uppercase;
+  color: var(--text-color-primary);
+  background-color: var(--bg-color-table-head);
+}
+
+.trasactions__collumn:not(:last-child) {
+  border-right: 1px solid var(--border-color);
+}
