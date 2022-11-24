@@ -1,38 +1,65 @@
 import PropTypes from 'prop-types';
-import css from './Profile.module.css';
 import { formatNumber } from 'utils';
+import { Box } from 'components/Box';
+import { Avatar, Name, Info, Label, Quantity } from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div className={css.profile}>
-      <div className={css.description}>
-        <img
-          src={avatar}
-          alt="User avatar"
-          className={css.avatar}
-          width={120}
-          height={120}
-        />
-        <p className={css.name}>{username}</p>
-        <p className={css.tag}>@{tag}</p>
-        <p className={css.location}>{location}</p>
-      </div>
+    <Box boxShadow="primary">
+      <Box padding={5} bg="bgPrimary">
+        <Avatar src={avatar} alt="User avatar" width={120} height={120} />
+        <Name>{username}</Name>
+        <Info>@{tag}</Info>
+        <Info>{location}</Info>
+      </Box>
 
-      <ul className={css.stats}>
-        <li className={css.stats__item}>
-          <span className={css.label}>Followers</span>
-          <span className={css.quantity}>{formatNumber(stats.followers)}</span>
-        </li>
-        <li className={css.stats__item}>
-          <span className={css.label}>Views</span>
-          <span className={css.quantity}>{formatNumber(stats.views)}</span>
-        </li>
-        <li className={css.stats__item}>
-          <span className={css.label}>Likes</span>
-          <span className={css.quantity}>{formatNumber(stats.likes)}</span>
-        </li>
-      </ul>
-    </div>
+      <Box display="grid" gridTemplateColumns="1fr 1fr 1fr" as="ul">
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          gridGap={3}
+          padding={4}
+          bg="bgLight"
+          borderTop="primary"
+          borderRight="primary"
+          as="li"
+        >
+          <Label>Followers</Label>
+          <Quantity>{formatNumber(stats.followers)}</Quantity>
+        </Box>
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          gridGap={3}
+          padding={4}
+          bg="bgLight"
+          borderTop="primary"
+          borderRight="primary"
+          as="li"
+        >
+          <Label>Views</Label>
+          <Quantity>{formatNumber(stats.views)}</Quantity>
+        </Box>
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          gridGap={3}
+          padding={4}
+          bg="bgLight"
+          borderTop="primary"
+          as="li"
+        >
+          <Label>Likes</Label>
+          <Quantity>{formatNumber(stats.likes)}</Quantity>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

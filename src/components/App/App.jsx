@@ -7,11 +7,19 @@ import { Profile } from 'components/Profile';
 import { Statistics } from 'components/Statistics';
 import { FriendList } from 'components/FriendList';
 import { TransactionHistory } from 'components/TransactionHistory';
-import css from './App.module.css';
+import { Box } from 'components/Box';
 
 export const App = () => {
   return (
-    <div className={css.app}>
+    <Box
+      display="flex"
+      flexWrap="wrap"
+      justifyContent="center"
+      alignItems="center"
+      padding={5}
+      gridGap={5}
+      bg="bgDark"
+    >
       <Profile
         username={user.username}
         tag={user.tag}
@@ -22,6 +30,6 @@ export const App = () => {
       <Statistics title="Upload stats" stats={statData} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
-    </div>
+    </Box>
   );
 };
