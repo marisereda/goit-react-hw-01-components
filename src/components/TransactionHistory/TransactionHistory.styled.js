@@ -14,7 +14,7 @@ export const Column = styled.th`
   padding-left: ${p => p.theme.space[6]}px;
   font-weight: normal;
 
-  :first-child {
+  tbody &:first-child {
     text-transform: capitalize;
   }
   :not(:last-child) {
