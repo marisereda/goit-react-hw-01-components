@@ -1,34 +1,28 @@
 import { PropTypes } from 'prop-types';
-import { colors } from 'constants';
-import css from './TransactionHistory.module.css';
+import { Box } from 'components/Box';
+import { Head, Column, Raw } from './TransactionHistory.styled';
 
 export const TransactionHistory = ({ items }) => {
   return (
-    <table className={css.transactions}>
-      <thead className={css.transactions__head}>
+    <Box as="table" textAlign="center" color="textAccent" boxShadow="primary">
+      <Head>
         <tr>
-          <th className={css.trasactions__collumn}>Type</th>
-          <th className={css.trasactions__collumn}>Amount</th>
-          <th className={css.trasactions__collumn}>Currency</th>
+          <Column>Type</Column>
+          <Column>Amount</Column>
+          <Column>Currency</Column>
         </tr>
-      </thead>
+      </Head>
 
       <tbody>
-        {items.map((item, index) => (
-          <tr
-            key={item.id}
-            style={{
-              backgroundColor:
-                index % 2 ? colors.bgColorDark : colors.bgColorPrimary,
-            }}
-          >
-            <td className={css.trasactions__collumn}>{item.type}</td>
-            <td className={css.trasactions__collumn}>{item.amount}</td>
-            <td className={css.trasactions__collumn}>{item.currency}</td>
-          </tr>
+        {items.map(({ id, type, amount, currency }) => (
+          <Raw key={id}>
+            <Column as="td">{type}</Column>
+            <Column as="td">{amount}</Column>
+            <Column as="td">{currency}</Column>
+          </Raw>
         ))}
       </tbody>
-    </table>
+    </Box>
   );
 };
 

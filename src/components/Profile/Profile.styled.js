@@ -1,10 +1,13 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 export const Avatar = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: ${p => p.theme.space[4]}px;
+  width: ${p => p.theme.sizes.profileAvatar};
+  height: ${p => p.theme.sizes.profileAvatar};
 
   border: 1px solid ${p => p.theme.colors.borderColor};
   border-radius: ${p => p.theme.radii.circle};
@@ -37,3 +40,7 @@ export const Quantity = styled.span`
   font-weight: bold;
   color: ${p => p.theme.colors.textAccent};
 `;
+
+Avatar.propTypes = {
+  src: PropTypes.string.isRequired,
+};

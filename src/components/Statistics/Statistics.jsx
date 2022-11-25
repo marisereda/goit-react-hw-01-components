@@ -1,28 +1,43 @@
 import { PropTypes } from 'prop-types';
 import { getRandomColor } from 'utils';
-import css from './Statistics.module.css';
+import { Box } from 'components/Box';
+import { Title, Label, Percentage } from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className={css.statistics}>
-      {title && <h2 className={css.title}>{title}</h2>}
+    <Box boxShadow="primary" as="section">
+      {title && <Title>{title}</Title>}
 
-      <ul className={css.stat__list}>
+      <Box
+        as="ul"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        flexWrap="wrap"
+      >
         {stats.map(({ id, label, percentage }) => {
           const color = getRandomColor();
           return (
-            <li
-              className={css.item}
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              gridGap={3}
+              minWidth="statisticBox"
+              padding={4}
+              color="textPrimary"
+              bg={color}
+              as="li"
               key={id}
-              style={{ backgroundColor: color }}
             >
-              <span className={css.label}>{label}</span>
-              <span className={css.percentage}>{percentage}%</span>
-            </li>
+              <Label>{label}</Label>
+              <Percentage>{percentage}%</Percentage>
+            </Box>
           );
         })}
-      </ul>
-    </section>
+      </Box>
+    </Box>
   );
 };
 

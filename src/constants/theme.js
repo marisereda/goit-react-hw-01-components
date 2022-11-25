@@ -12,12 +12,22 @@ export const theme = {
     bgDark: '#e7ecf2',
     bgLight: '#f3f6f9',
     bgTableHead: '#00bcd5',
+    bgStatusOnline: 'green',
+    bgStatusOffline: 'red',
 
     textAccent: '#3c4756',
     textLight: '#b1b9c2',
     textPrimary: 'white',
 
     borderColor: '#e5eaf1',
+  },
+
+  sizes: {
+    statisticBox: '64px',
+    friendBox: '240px',
+    statusBox: '16px',
+    profileAvatar: '120px',
+    friendListAvatar: '48px',
   },
 
   borders: {

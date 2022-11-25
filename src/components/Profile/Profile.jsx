@@ -2,12 +2,17 @@ import PropTypes from 'prop-types';
 import { formatNumber } from 'utils';
 import { Box } from 'components/Box';
 import { Avatar, Name, Info, Label, Quantity } from './Profile.styled';
+import { theme } from 'constants';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
     <Box boxShadow="primary">
       <Box padding={5} bg="bgPrimary">
-        <Avatar src={avatar} alt="User avatar" width={120} height={120} />
+        <Avatar
+          src={avatar}
+          alt="User avatar"
+          width={theme.sizes.profileAvatar}
+        />
         <Name>{username}</Name>
         <Info>@{tag}</Info>
         <Info>{location}</Info>
