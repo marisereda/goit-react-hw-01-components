@@ -15,7 +15,7 @@ export const App = () => {
       display="flex"
       flexWrap="wrap"
       justifyContent="center"
-      alignItems="center"
+      alignItems="flex-start"
       padding={5}
       gridGap={5}
       bg="bgDark"
