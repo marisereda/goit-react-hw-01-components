@@ -14,7 +14,7 @@ There are:
 - React
 - Styled-components
 - Styled-system
-- Webpack
+- 
 
 The live React components page is
 [here](https://marisereda.github.io/goit-react-hw-01/).
